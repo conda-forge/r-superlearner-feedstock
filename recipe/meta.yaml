@@ -1,4 +1,4 @@
-{% set version = "2.0-26" %}
+{% set version = "2.0-28" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/SuperLearner_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/SuperLearner/SuperLearner_{{ version }}.tar.gz
-  sha256: 4462922c8daae2773f79ecdea7ca3cc4ea51bfd101c5e6c1ad22f9190e746081
+  sha256: 5f42233abd48f1740c33aae1ec4ad8e9952fddb5df1ee49ff2d43d5d89f05601
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -23,13 +23,16 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-cvauc
+    - r-gam >=1.15
     - r-nnls
   run:
     - r-base
     - r-cvauc
+    - r-gam >=1.15
     - r-nnls
 
 test:
@@ -39,11 +42,11 @@ test:
 
 about:
   home: https://github.com/ecpolley/SuperLearner
-  license: GPL-3
-  summary: Implements the super learner prediction method and contains a library of prediction
-    algorithms to be used in the super learner.
+  license: GPL-3.0-only
+  summary: Implements the super learner prediction method and contains a library of prediction algorithms to be used in the super learner.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
