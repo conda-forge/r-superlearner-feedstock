@@ -1,11 +1,11 @@
-About r-superlearner
-====================
+About r-superlearner-feedstock
+==============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-superlearner-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/ecpolley/SuperLearner
 
 Package license: GPL-3.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-superlearner-feedstock/blob/main/LICENSE.txt)
 
 Summary: Implements the super learner prediction method and contains a library of prediction algorithms to be used in the super learner.
 
