@@ -1,4 +1,4 @@
-{% set version = "2.0-28.1" %}
+{% set version = "2.0-29" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/SuperLearner_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/SuperLearner/SuperLearner_{{ version }}.tar.gz
-  sha256: 752f11b99816f8d61c1ff411ea4d5bec5509f2a655d250e58baa48e8a0266ba6
+  sha256: 236b03f969f4880680abb7f818bbbd92926ac3cb30b55560e3ee4d25d1572b3c
 
 build:
   merge_build_host: true  # [win]
