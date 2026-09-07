@@ -3,7 +3,7 @@
 
 package:
   name: r-superlearner
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace("-", "_") }}"
 
 source:
   url:
@@ -27,11 +27,13 @@ requirements:
     - r-cvauc
     - r-gam >=1.15
     - r-nnls
+    - r-rlang
   run:
     - r-base
     - r-cvauc
     - r-gam >=1.15
     - r-nnls
+    - r-rlang
 
 test:
   commands:
